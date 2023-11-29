@@ -1,5 +1,5 @@
 import g4p_controls.*;
-PImage rightArrow, checkmark, xMark;
+PImage rightArrow, leftArrow, checkmark, xMark;
 int imageSize = 50;
 int textHeight = 100;
 
@@ -53,8 +53,12 @@ void draw() {
     fill(255);
     
     text(nameOfMonth(month) + " " + year, 75, textHeight+10);
+    
     rightArrow = loadImage("right-arrow-for-next-month.png");
-    image(rightArrow, width-paddingX-imageSize, textHeight-imageSize/2 - 10, imageSize, imageSize);
+    image(rightArrow, width - paddingX - imageSize, textHeight-imageSize/2 - 10, imageSize, imageSize);
+    
+    leftArrow = loadImage("left-arrow-for-previous-month.png");
+    image(leftArrow, width - paddingX - 2*imageSize, textHeight - imageSize/2 - 10, imageSize, imageSize);
     
     int topLeftText = 1; //Number in the top left of each box when making calendar
     

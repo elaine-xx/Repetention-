@@ -48,11 +48,20 @@ String nameOfMonth(int month) {
 }
 
 void mousePressed() {
-  if ((dist(mouseX, mouseY, width-paddingX-imageSize, textHeight-imageSize/2 - 10) <= imageSize) && (DrawDayScreen == false)) {
+  if ((dist(mouseX, mouseY, width - paddingX - imageSize, textHeight-imageSize/2 - 10) <= imageSize/2.0) && (DrawDayScreen == false)) {
      month += 1;
      if(month == 13){
        month = 1;
        year += 1;
      }
   } 
+  
+  else if ((dist(mouseX, mouseY, width - paddingX - 2*imageSize, textHeight-imageSize/2 - 10) <= imageSize/2.0) && (DrawDayScreen == false)) {
+     month -= 1;
+     if(month == 0){
+       month = 12;
+       year -= 1;
+     }
+  } 
+  
 }
