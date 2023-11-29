@@ -13,6 +13,7 @@ void drawDayScreen(int month, int day) {
   xMark = loadImage("x mark.png");
   image(checkmark, 900, 65, 40, 40);
   image(xMark, 950, 64, 42, 42);
+  
   if (DrawDayScreen == true){
     if (mousePressed == true){
       if(mouseX >= 900 && mouseX <= 940){

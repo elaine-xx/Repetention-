@@ -11,6 +11,7 @@ int days = 7;
 int weeks;
 int month = 2;
 int year = 2024;
+int dayBeingShown = 1;
 
 boolean DrawDayScreen = false;
 boolean DrawOnce = true;
@@ -75,7 +76,7 @@ void draw() {
   }
   else if(DrawDayScreen == true){
     //month, day
-    drawDayScreen(9, 8);
+    drawDayScreen(month, dayBeingShown);
     if (DrawOnce == true){
        createGUI();
        DrawOnce = false;
