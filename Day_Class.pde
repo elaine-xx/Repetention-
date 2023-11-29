@@ -18,6 +18,7 @@ class Day {
         this.Colour = color(255, 0, 0);
       }
   }
+  
   void DrawMe() {            
     if (DrawDayScreen == false){
       if (mousePressed == true) { 
@@ -25,12 +26,13 @@ class Day {
           for (int j = 0; j<days; j++) {
             if (mouseX >= Days[j][i].x && mouseX <= Days[j][i].x + Days[j][i].SizeX ){
               if (mouseY >= Days[j][i].y + Days[j][i].SizeY && mouseY <= Days[j][i].y + Days[j][i].SizeY*2){
+                
                 if (SelectedOnce == false){
                   Days[j][i].Colour = color(255,0,0);
-                  DrawDayScreen = true;                  
-                  DrawOnce = true;
+                  DrawDayScreen = true;                                    
                   dayBeingShown = Days[j][i].dayNum;
                 }
+                
                 else if (SelectedOnce == true){
                   Days[j][i].Colour = color(255);
                 }

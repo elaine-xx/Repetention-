@@ -21,6 +21,8 @@ Day[][] Days;
 void setup() {
   size(1000, 600);  
   
+  createGUI();
+  
    if (weekMonthStarter(year, month) + lengthOfMonth(year, month) > 35) //If total amt of days exceeds five weeks.
     weeks = 6;
     
@@ -38,8 +40,13 @@ void setup() {
 
 
 void draw() {  
-  background(204);
+  background(204);    
   if (DrawDayScreen == false) {
+    
+    button1.setVisible(false);
+    custom_slider1.setVisible(false);
+    textfield1.setVisible(false);
+    
     int dayStarter = weekMonthStarter(year, month);
     stroke(255);
     textSize(60);
@@ -76,12 +83,12 @@ void draw() {
   }
   
   else if(DrawDayScreen == true){
+    button1.setVisible(true);
+    custom_slider1.setVisible(true);
+    textfield1.setVisible(true);
+    
     //month, day
     drawDayScreen(month, dayBeingShown);
-    if (DrawOnce == true){
-       createGUI();
-       DrawOnce = false;
-    }
   }
   
   String[] daysOfWeek= {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};

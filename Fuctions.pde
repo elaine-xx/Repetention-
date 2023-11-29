@@ -1,7 +1,6 @@
 String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 int[] monthLengths = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-
 // Calendar Algorithm 
 int weekMonthStarter(int year, int month) {
   int daysSince2023 = 0;
@@ -30,7 +29,6 @@ int weekMonthStarter(int year, int month) {
   return dayOfTheWeek;
 }
 
-
 // Returns length of month
 int lengthOfMonth(int year, int month) {
   int monthLength = 0;
@@ -40,11 +38,9 @@ int lengthOfMonth(int year, int month) {
 
   if (leapYear && (month == 2))
       monthLength += 1;
-  
 
   return monthLength;
 }
-
 
 // Returns name of month
 String nameOfMonth(int month) {    
