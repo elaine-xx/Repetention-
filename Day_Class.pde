@@ -27,8 +27,9 @@ class Day {
               if (mouseY >= Days[j][i].y + Days[j][i].SizeY && mouseY <= Days[j][i].y + Days[j][i].SizeY*2){
                 if (SelectedOnce == false){
                   Days[j][i].Colour = color(255,0,0);
-                  DrawDayScreen = true;
+                  DrawDayScreen = true;                  
                   DrawOnce = true;
+                  dayBeingShown = Days[j][i].dayNum;
                 }
                 else if (SelectedOnce == true){
                   Days[j][i].Colour = color(255);
