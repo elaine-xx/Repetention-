@@ -9,8 +9,8 @@ float paddingY = 100;
 
 int days = 7;
 int weeks;
-int month = 2;
-int year = 2024;
+int month = 12;
+int year = 2025;
 int dayBeingShown = 5;
 
 boolean DrawDayScreen = false;
