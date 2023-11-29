@@ -11,7 +11,7 @@ int days = 7;
 int weeks;
 int month = 2;
 int year = 2024;
-int dayBeingShown = 1;
+int dayBeingShown = 5;
 
 boolean DrawDayScreen = false;
 boolean DrawOnce = true;
@@ -45,7 +45,7 @@ void draw() {
     textSize(60);
     fill(255);
     
-    text(nameOfMonth(month) + " " + year, paddingY, textHeight);
+    text(nameOfMonth(month) + " " + year, 75, textHeight+10);
     rightArrow = loadImage("right-arrow-for-next-month.png");
     image(rightArrow, width-paddingX-imageSize, textHeight-imageSize/2 - 10, imageSize, imageSize);
     
@@ -74,12 +74,20 @@ void draw() {
       y += daySizeY;
     }
   }
+  
   else if(DrawDayScreen == true){
     //month, day
-    drawDayScreen(month, dayBeingShown);
+    drawDayScreen(9, 8);
     if (DrawOnce == true){
        createGUI();
        DrawOnce = false;
     }
   }
+  
+  String[] daysOfWeek= {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+  for (int i=0; i<7; i++) {
+    textSize(18);
+    text(daysOfWeek[i], paddingX+(paddingX/2)+25+ daySizeX * i, 165);
+  }
+  
 }
