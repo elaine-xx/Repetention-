@@ -46,3 +46,13 @@ int lengthOfMonth(int year, int month) {
 String nameOfMonth(int month) {    
   return months[month - 1];
 }
+
+void mousePressed() {
+  if ((dist(mouseX, mouseY, width-paddingX-imageSize, textHeight-imageSize/2 - 10) <= imageSize) && (DrawDayScreen == false)) {
+     month += 1;
+     if(month == 13){
+       month = 1;
+       year += 1;
+     }
+  } 
+}
