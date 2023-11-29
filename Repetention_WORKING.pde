@@ -77,7 +77,7 @@ void draw() {
   
   else if(DrawDayScreen == true){
     //month, day
-    drawDayScreen(9, 8);
+    drawDayScreen(month, dayBeingShown);
     if (DrawOnce == true){
        createGUI();
        DrawOnce = false;
