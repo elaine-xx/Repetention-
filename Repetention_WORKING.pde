@@ -8,7 +8,7 @@ float paddingX = 50;
 float paddingY = 100;
 
 int days = 7;
-int weeks;
+int weeks = 6;
 int month = 12;
 int year = 2025;
 int dayBeingShown = 5;
@@ -23,14 +23,14 @@ void setup() {
   
   createGUI();
   
-   if (weekMonthStarter(year, month) + lengthOfMonth(year, month) > 35) //If total amt of days exceeds five weeks.
-    weeks = 6;
+  // if (weekMonthStarter(year, month) + lengthOfMonth(year, month) > 35) //If total amt of days exceeds five weeks.
+  //  weeks = 6;
     
-  else if(weekMonthStarter(year, month) + lengthOfMonth(year, month) > 28) //If total amt of days exceeds fivefour weeks.
-    weeks = 5;
+  //else if(weekMonthStarter(year, month) + lengthOfMonth(year, month) > 28) //If total amt of days exceeds fivefour weeks.
+  //  weeks = 5;
     
-  else
-    weeks = 4;
+  //else
+  //  weeks = 4;
   
   daySizeX = (width-2*paddingX)/days;
   daySizeY = (height-2*paddingY)/weeks;
@@ -42,6 +42,15 @@ void setup() {
 void draw() {  
   background(204);    
   if (DrawDayScreen == false) {
+    
+     //if (weekMonthStarter(year, month) + lengthOfMonth(year, month) > 35) //If total amt of days exceeds five weeks.
+     //   weeks = 6;
+        
+     //else if(weekMonthStarter(year, month) + lengthOfMonth(year, month) > 28) //If total amt of days exceeds fivefour weeks.
+     //  weeks = 5;
+        
+     //else
+     //  weeks = 4;
     
     button1.setVisible(false);
     custom_slider1.setVisible(false);
@@ -95,8 +104,8 @@ void draw() {
     drawDayScreen(month, dayBeingShown);
   }
   
-  String[] daysOfWeek= {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
-  for (int i=0; i<7; i++) {
+  String[] daysOfWeek= {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+  for (int i=0; i < 7; i++) {
     textSize(18);
     text(daysOfWeek[i], paddingX+(paddingX/2)+25+ daySizeX * i, 165);
   }

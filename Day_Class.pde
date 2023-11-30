@@ -22,12 +22,11 @@ class Day {
   void DrawMe() {            
     if (DrawDayScreen == false){
       if (mousePressed == true) { 
-        for (int i = 0; i< weeks; i++) { 
-          for (int j = 0; j<days; j++) {
+        for (int i = 0; i < weeks; i++) { 
+          for (int j = 0; j < days; j++) {
             if (mouseX >= Days[j][i].x && mouseX <= Days[j][i].x + Days[j][i].SizeX ){
-              if (mouseY >= Days[j][i].y + Days[j][i].SizeY && mouseY <= Days[j][i].y + Days[j][i].SizeY*2){
-                
-                if (SelectedOnce == false){
+              if (mouseY >= Days[j][i].y + Days[j][i].SizeY && mouseY <= Days[j][i].y + Days[j][i].SizeY*2){                
+                if (SelectedOnce == false && (Days[j][i].dayNum != 0)){
                   Days[j][i].Colour = color(255,0,0);
                   DrawDayScreen = true;                                    
                   dayBeingShown = Days[j][i].dayNum;
