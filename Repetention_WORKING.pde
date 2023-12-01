@@ -3,14 +3,14 @@ PImage rightArrow, leftArrow, checkmark, xMark;
 int imageSize = 50;
 int textHeight = 100;
 
-float daySizeX,daySizeY;
+float daySizeX, daySizeY;
 float paddingX = 50;
 float paddingY = 100;
 
 int days = 7;
 int weeks = 6;
-int month = 12;
-int year = 2025;
+int month = 9;
+int year = 2029;
 int dayBeingShown = 5;
 
 boolean DrawDayScreen = false;
@@ -32,8 +32,8 @@ void setup() {
   //else
   //  weeks = 4;
   
-  daySizeX = (width-2*paddingX)/days;
-  daySizeY = (height-2*paddingY)/weeks;
+  daySizeX = (width-2*paddingX)/days; //width of a day
+  daySizeY = (height-2*paddingY)/weeks; //height 
   Days = new Day[days][weeks];
   
 }
@@ -69,7 +69,7 @@ void draw() {
     leftArrow = loadImage("left-arrow-for-previous-month.png");
     image(leftArrow, width - paddingX - 2*imageSize, textHeight - imageSize/2 - 10, imageSize, imageSize);
     
-    int topLeftText = 1; //Number in the top left of each box when making calendar
+    int topLeftText = 1; //Number in the top left of each day when drawing calendar
     
     textSize(10);
     stroke(0);
@@ -104,6 +104,8 @@ void draw() {
     drawDayScreen(month, dayBeingShown);
   }
   
+  
+  //Draw day of week above calendar block
   String[] daysOfWeek= {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
   for (int i=0; i < 7; i++) {
     textSize(18);
