@@ -1,9 +1,11 @@
 void drawDayScreen(int month, int day) {
   int padding = 70;
   textSize(40);
-  text(nameOfMonth(month) + " " + day, 100,93);
-  rectMode(CORNERS);
   fill(255);
+  rectMode(CORNERS);  
+  
+  text(nameOfMonth(month) + " " + day, 100,93);
+  
   rect(0+padding, 120, width-padding, height-padding);
   rect(0+padding, 470, width-padding, height-padding);
   
