@@ -3,16 +3,14 @@ int weekMonthStarter(int year, int month) {
   int daysSincestartingYear = 0;
   boolean leapYear; 
 
-  for (int i = startingYear; i < year; i++) {
+  for (int i = 0; i < year; i++) {
     leapYear = (i % 4 == 0) && !(i % 100 == 0);
 
-    if (leapYear) {
-      daysSincestartingYear += 366; // If a leap year
-    } 
+    if (leapYear)
+      daysSincestartingYear += 2; // If a leap year    
     
-    else {
-      daysSincestartingYear += 365;
-    }
+    else
+      daysSincestartingYear += 1;    
   }
 
   for(int i = 0; i < 12; i++){
@@ -23,7 +21,7 @@ int weekMonthStarter(int year, int month) {
   if ((year % 4 == 0) && !(year % 100 == 0) && (month > 2))
     daysSincestartingYear += 1;
 
-  int dayOfTheWeek = (daysSincestartingYear % 7);
+  int dayOfTheWeek = ((daysSincestartingYear + 5) % 7);
 
   return dayOfTheWeek;
 }
