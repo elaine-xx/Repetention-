@@ -13,7 +13,7 @@ int weekMonthStarter(int year, int month) {
       daysSincestartingYear += 1;    
   }
 
-  for(int i = 0; i < 12; i++){
+  for(int i = 0; i < 12; i++) {
     if(month > i + 1)
       daysSincestartingYear += monthLengths[i];
   }
@@ -50,7 +50,7 @@ void mousePressed() {
   
   if ((dist(mouseX, mouseY, width - paddingX - imageSize/2.0, textHeight - imageSize/2) <= imageSize/2.0) && (DrawDayScreen == false) && !lastDay) {    
     month += 1;    
-    if(month == 13){
+    if(month == 13) {
       month = 1;
       year += 1;
     }      
@@ -58,16 +58,16 @@ void mousePressed() {
   
   else if ((dist(mouseX, mouseY, width - paddingX - imageSize - imageSize/2.0, textHeight - imageSize/2) <= imageSize/2.0) && (DrawDayScreen == false) && !firstJan) {       
     month -= 1;
-    if(month == 0){
+    if(month == 0) {
       month = 12;
       year -= 1;
     }    
   } 
 }
 
-void setupCalendar(){ //This adds the proper days to all days
-  for(int i = startingYear; i < startingYear + yearAmt; i++){       //Goes through years after startingYear
-    for(int j = 1; j <= 12; j++){                                   //Goes through all months
+void setupCalendar() { //This adds the proper days to all days
+  for(int i = startingYear; i < startingYear + yearAmt; i++) {       //Goes through years after startingYear
+    for(int j = 1; j <= 12; j++) {                                   //Goes through all months
       int weeks = amtOfWeeks(i, j);    
       
       daySizeX = (width-2*paddingX)/days;
@@ -92,7 +92,7 @@ void setupCalendar(){ //This adds the proper days to all days
   }
 }
 
-int amtOfWeeks(int y, int m){
+int amtOfWeeks(int y, int m) {
   if (weekMonthStarter(y, m) + lengthOfMonth(y, m) > 35)
     return 6;
     
@@ -103,7 +103,7 @@ int amtOfWeeks(int y, int m){
     return 4;
 }
 
-void drawCalendar(){    
+void drawCalendar() {    
   button1.setVisible(false);
   custom_slider1.setVisible(false);
   textfield1.setVisible(false);
@@ -129,14 +129,14 @@ void drawCalendar(){
   daySizeY = (height-2*paddingY)/weekAmt;
   
   //Draws white squares before first day of month
-  for(int i = 0; i < weekMonthStarter(year, month); i++){
+  for(int i = 0; i < weekMonthStarter(year, month); i++) {
     fill(255);
     rectMode(CORNERS);      
     rect(paddingX + i*daySizeX, paddingY + calDownShift, paddingX + (i + 1)*daySizeX, paddingY + daySizeY + calDownShift);
   }
   
   //Draws white squares after first day of month
-  for(int i = 7*weekAmt - lengthOfMonth(year, month); i < 7*weekAmt; i++){
+  for(int i = 7*weekAmt - lengthOfMonth(year, month); i < 7*weekAmt; i++) {
     int xPos = i % 7;
     fill(255);
     rectMode(CORNERS);      

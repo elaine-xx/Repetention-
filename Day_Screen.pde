@@ -18,17 +18,17 @@ void drawDayScreen(int month, int day) {
   custom_slider1.setVisible(true);
   textfield1.setVisible(true);  
   
-  if (mousePressed == true){
-    if(mouseX >= 900 && mouseX <= 940){
-      if (mouseY >= 65 && mouseY <= 105){
+  if (mousePressed == true) {
+    if(mouseX >= 900 && mouseX <= 940) {
+      if (mouseY >= 65 && mouseY <= 105) {
         DrawDayScreen = false;
         textfield1.setVisible(false);
         custom_slider1.setVisible(false);
         DrawOnce = true;
       }
     }
-    if(mouseX>=950 && mouseX<=992){
-      if(mouseY>=64 && mouseY<=108){
+    if(mouseX>=950 && mouseX<=992) {
+      if(mouseY>=64 && mouseY<=108) {
         DrawDayScreen = false;
         DrawOnce = true;
       }

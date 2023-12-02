@@ -4,7 +4,7 @@ class Day {
   color Colour;
   boolean SelectedOnce;
   
-  Day(float x, float y, float SizeX, float SizeY, int dayNum){
+  Day(float x, float y, float SizeX, float SizeY, int dayNum) {
     this.x = x;
     this.y = y;
     this.SizeX = SizeX;
@@ -13,25 +13,25 @@ class Day {
     this.dayNum = dayNum;
   }
   
-  void mouseClicked(){ 
-    if (mouseX >= this.x && mouseX <= this.x + this.SizeX && mouseY >= this.y && mouseY <= this.y + this.SizeY){
+  void mouseClicked() { 
+    if (mouseX >= this.x && mouseX <= this.x + this.SizeX && mouseY >= this.y && mouseY <= this.y + this.SizeY) {
       this.Colour = color(255, 0, 0);
     }
   }
   
   void DrawMe() {    
-    if (DrawDayScreen == false){
+    if (DrawDayScreen == false) {
       if (mousePressed == true) {         
         for (int i = 0; i < lengthOfMonth(year, month); i++) {
-          if (mouseX >= Days[year - startingYear][month - 1][i].x && mouseX <= Days[year - startingYear][month - 1][i].x + Days[year - startingYear][month - 1][i].SizeX ){
-            if (mouseY + calDownShift >= Days[year - startingYear][month - 1][i].y + Days[year - startingYear][month - 1][i].SizeY && mouseY + calDownShift <= Days[year - startingYear][month - 1][i].y + Days[year - startingYear][month - 1][i].SizeY*2){                
-              if (SelectedOnce == false && (Days[year - startingYear][month - 1][i].dayNum != 0)){
+          if (mouseX >= Days[year - startingYear][month - 1][i].x && mouseX <= Days[year - startingYear][month - 1][i].x + Days[year - startingYear][month - 1][i].SizeX ) {
+            if (mouseY + calDownShift >= Days[year - startingYear][month - 1][i].y + Days[year - startingYear][month - 1][i].SizeY && mouseY + calDownShift <= Days[year - startingYear][month - 1][i].y + Days[year - startingYear][month - 1][i].SizeY*2) {                
+              if (SelectedOnce == false && (Days[year - startingYear][month - 1][i].dayNum != 0)) {
                 Days[year - startingYear][month - 1][i].Colour = color(255,0,0);
                 DrawDayScreen = true;                                    
                 dayBeingShown = Days[year - startingYear][month - 1][i].dayNum;
               }
               
-              else if (SelectedOnce == true){
+              else if (SelectedOnce == true) {
                 Days[year - startingYear][month - 1][i].Colour = color(255);
               }
             }
