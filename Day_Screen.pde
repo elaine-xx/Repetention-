@@ -8,27 +8,29 @@ void drawDayScreen(int month, int day) {
   rect(0+padding, 470, width-padding, height-padding);
   
   textSize(20);
-  text("Save Changes?", 660, 91);
+  text("Save Changes?", 760, 91);
   checkmark = loadImage("green check.png");
   xMark = loadImage("x mark.png");
-  image(checkmark, 800, 65, 40, 40);
-  image(xMark, 850, 64, 42, 42);
+  image(checkmark, 900, 65, 40, 40);
+  image(xMark, 950, 64, 42, 42);
   
-  if (DrawDayScreen == true){
-    if (mousePressed == true){
-      if(mouseX >= 800 && mouseX <= 840){
-        if (mouseY >= 65 && mouseY <= 105){
-          DrawDayScreen = false;
-          textfield1.setVisible(false);
-          custom_slider1.setVisible(false);
-          DrawOnce = true;
-        }
+  button1.setVisible(true);
+  custom_slider1.setVisible(true);
+  textfield1.setVisible(true);  
+  
+  if (mousePressed == true){
+    if(mouseX >= 900 && mouseX <= 940){
+      if (mouseY >= 65 && mouseY <= 105){
+        DrawDayScreen = false;
+        textfield1.setVisible(false);
+        custom_slider1.setVisible(false);
+        DrawOnce = true;
       }
-      if(mouseX>=950 && mouseX<=992){
-        if(mouseY>=64 && mouseY<=108){
-          DrawDayScreen = false;
-          DrawOnce = true;
-        }
+    }
+    if(mouseX>=950 && mouseX<=992){
+      if(mouseY>=64 && mouseY<=108){
+        DrawDayScreen = false;
+        DrawOnce = true;
       }
     }
   }
